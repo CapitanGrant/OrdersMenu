@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenue Calculation</title>
+    <link rel="stylesheet" href="{% static 'orders/css/styles.css' %}">
+</head>
+<body>
+    <h1>Total Revenue</h1>
+    <p>Total Revenue: ${{ total_revenue }}</p>
+    <a href="{% url 'order_list' %}">Back to List</a>
+</body>
+</html>

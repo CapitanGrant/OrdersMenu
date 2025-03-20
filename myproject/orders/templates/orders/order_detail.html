@@ -1,0 +1,15 @@
+{% extends 'orders/base.html' %}
+
+{% block content %}
+    <h2>Заказ #{{ order.id }}</h2>
+    <p><strong>Номер стола:</strong> {{ order.table_number }}</p>
+    <p><strong>Блюда:</strong></p>
+    <ul>
+        {% for item in order.items %}
+        <li>{{ item.name }} - {{ item.price }} руб.</li>
+        {% endfor %}
+    </ul>
+    <p><strong>Общая стоимость:</strong> {{ order.total_price }} руб.</p>
+    <p><strong>Статус:</strong> {{ order.get_status_display }}</p>
+    <a href="{% url 'order-list' %}">Назад к списку</a>
+{% endblock %}
